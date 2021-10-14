@@ -30,16 +30,18 @@
       console.log("Time : " + myTime);
   }
 
- function startTime(){
-    
-        for (let i = 0; i <=3; i++) {
-        setTimeout(function (i) {
-        document.getElementById("countdown").innerHTML = i
-        }, (((3) - i) * 1000), i)
-        }
+  function startTime() {
+
+let counter = Math.round(Math.random() * (10 - 2) + 2)
+
+for (let index = 0; index < counter; index++) {
+  setTimeout(function () {
+    document.getElementById('countdown').innerHTML = "Count " + index;
+  }, (((counter - 1) - index) * 1000))
+}
  
- setTimeout(function (i) {
-            console.log(i)
+ setTimeout(function () {
+            
             if (myTime == undefined) {
             document.getElementById("target").innerHTML = "Too Slow"
             
@@ -50,7 +52,7 @@
             document.getElementById("target").innerHTML = "Time was : " + elapsedTime;
            
             }
-        }, (3 - 1)*1000)
+        }, (counter - 1)*1000)
     }  
     
   </script>
